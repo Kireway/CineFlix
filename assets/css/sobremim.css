@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0%;
+    top: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #7a0000;
+}
+
+.header{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 25px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between; /*separar o titulo e "voltar"*/
+    text-align: center;
+    /*position: fixed;*/
+    width: 1486px; /*??????, oq é max-width*/
+}
+
+.header nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header nav ul{
+    list-style: none;
+    display: flex;
+    margin-right: 30px; /*!!!!!!!!!!!!!!!*/
+    margin-top: 5px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#titulo{
+    text-align: center;
+    background-color: #E5E4E2;
+    padding: 15px;
+    width: 30%;
+    border-radius: 10px;
+    margin: 40px auto;
+}
+
+#imagens{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+}
+.img{
+    width: 300px;
+    height: 225px;
+    object-fit: cover; /* corta a imagem para caber no espaço */
+}
+
+.topico{
+    color: white;
+    max-width: max-content;
+    margin: 0% auto;
+    padding: 50px;
+}
+
+hr{
+    width: 80%;
+    margin: 0% auto;
+}
