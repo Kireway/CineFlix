@@ -1,157 +1,141 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black; /* Barras pretas */
-    height: 100%;
-    color: red;
-    font-family: sans-serif
+:root{
+  --cor-fundo: #101010;
+  --cor-header: #000;
+  --cor-letras: #f00;
 }
 
-#fundo img{
-    background-size: cover;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    width: 100%;
-    height: 80%; /* controla a altura da imagem */
-    position: absolute;
-    top: 10%;
-    z-index: 0;
-}  
-
-#opaco {
-    background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+* {
+  bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
-#topo{
-    display: flex;
-    justify-content: space-around;
-    color: red;
+body{
+  font-family: sans-serif;
+  background-color: black;
+  color: white
+}
+img{
+  border-radius: 15px;
 }
 
-#cadastro{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-    position: relative;
-    margin: 0 auto;
-    width: 350px;
+.imagem img{
+  position: absolute;
+  width: 1520px; /*Largura da janela*/
+  top: 100px;
+  height: 720px;
+  border-radius: 0;
+  z-index: -2;
+}
+.imagem div{
+  background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
+  position: absolute;
+  top: 100px; 
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: -1;
 }
 
-.campo label{
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    color: #8c8c8c;
-    font-size: 16px;
-    background-color: transparent;
-    padding: 0 5px;
-    pointer-events: none;
-    transition: 0.2s ease all;
+header{
+  font-family: "Helvetica Neue", "Netflix Sans", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96%;
+  padding: 2%;
+  height: 35px;
+  background-color: transparent;
+  color: var(--cor-letras);
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
+  animation: descendo 2s;
+}
+header a{
+  color: var(--cor-letras); /*Título CINEFLIX*/
 }
 
-.campo{
-    position: relative;
+nav, ul {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
 }
 
-input{
-    background-color: rgba(0, 0, 0, 0);
-    width: 80%;
-    height: 30px;
-    font-size: 16px;
-    border: white 1px solid;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
+a{
+  color: rgb(230, 230, 230);
+}
+a:hover{
+  cursor: pointer;
 }
 
-input:focus{
-    border-color: red;
-    outline: none;
+li:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
-
-input:focus + label, 
-input:not(:placeholder-shown) + label{ /* Quando estiver com conteúdo dentro (ajuda do chatGPT) */
-    top: -20px;
-    left: 15px;
-    font-size: 16px;
-    color: white;
-}
-
-/* Mostrar a linha embaixo de "configurações" */
-
-#config{
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    top: 5px;
-}
-
-#config::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 35px;
-    width: 100%;
-    height: 2px; /* Espessura da linha */
-    background-color: red;
-    transform: scaleX(0); /* Linha começa encolhida */ 
-    transform-origin: center;
-    transition: transform 0.1s ease-in-out;
-}
-
-#config:hover::after{
-    transform: scaleX(1); /* Linha expande */
-}
-
 
 main{
-    position: relative;
-    z-index: 1;
-    color: white;
-}
-#quadrado{
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    width: 30%;
-    padding: 5%;
-    border-radius: 5px;
+  margin-top: 750px;
 }
 
-h1{
-    font-family: "Helvetica Neue", "Netflix Sans", sans-serif;
-    margin-top: 10px; /* altura do logo */
-    font-size: 50px;
+td {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+td:hover{
+  transform: scale(1.07);
+  cursor: pointer;
+}
+td, th{
+  padding: 30px;
 }
 
+hr{
+  border: none;
+  height: 2px;
+  background-color: var(--cor-letras);
+}
 
-.botao{
-    background-color: red;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    color: white;
-    border: white 2px solid;
-    cursor: pointer; /* muda o cursor para uma maozinha */
-    font-size: 20px;
-    margin: 4% auto;
-    transition: 300ms; /*pra nao ficar animação seca*/
+td img {
+  width: 180px;
+  height: auto;
 }
-.botao:hover{
-    transform: scale(1.04);
-    background-color: darkred;
+
+#linha td:hover{
+  background-color: black;
+  transform: none;
+  cursor: default;
 }
-footer{
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    color: red;
+
+table{
+  margin: 0 auto;
+  font-size: 100%;
+  color: white;
+  padding: 3%;
+  animation: entrando 2s;
+}
+
+a{
+  text-decoration: none;
+}
+
+@keyframes descendo{
+  from{
+    margin-top: -10%;
+  }
+  to{
+    margin: 0;
+  }
+}
+@keyframes entrando{
+  from{
+    margin-left: -98%;
+  }
+  to{
+    margin: 0;
+  }
 }
