@@ -1,4 +1,6 @@
-function entrar() {
+function entrar(event) {
+    event.preventDefault(); // impede o envio automático do formulário
+    
     const nome = document.getElementById('nomeUsuario').value.trim(); // Remove espaços em branco
     const senha = document.getElementById('senhaUsuario').value.trim();
 
